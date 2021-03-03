@@ -1,0 +1,94 @@
+Prefix(:=<http://www.tiw3.sic/ontologies/StyloFAO.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.tiw3.sic/ontologies/StyloFAO.owl>
+
+Declaration(Class(:Bille))
+Declaration(Class(:Bouchon))
+Declaration(Class(:Capuchon))
+Declaration(Class(:Cartouche))
+Declaration(Class(:Mine))
+Declaration(Class(:Objet_conique))
+Declaration(Class(:Pointe))
+Declaration(Class(:Stylo))
+Declaration(Class(:Tube_cylindrique))
+Declaration(ObjectProperty(:composeDe))
+Declaration(NamedIndividual(:Instance_FAO_Bille))
+Declaration(NamedIndividual(:Instance_FAO_Bouchon))
+Declaration(NamedIndividual(:Instance_FAO_Capuchon))
+Declaration(NamedIndividual(:Instance_FAO_Cartouche))
+Declaration(NamedIndividual(:Instance_FAO_Mine))
+Declaration(NamedIndividual(:Instance_FAO_Objet_conique))
+Declaration(NamedIndividual(:Instance_FAO_Pointe))
+Declaration(NamedIndividual(:Instance_FAO_Stylo))
+Declaration(NamedIndividual(:Instance_FAO_Tube_cylindrique))
+
+############################
+#   Classes
+############################
+
+# Class: :Cartouche (:Cartouche)
+
+SubClassOf(:Cartouche ObjectSomeValuesFrom(:composeDe :Mine))
+SubClassOf(:Cartouche ObjectSomeValuesFrom(:composeDe :Pointe))
+
+# Class: :Pointe (:Pointe)
+
+SubClassOf(:Pointe ObjectSomeValuesFrom(:composeDe :Bille))
+SubClassOf(:Pointe ObjectSomeValuesFrom(:composeDe :Objet_conique))
+
+# Class: :Stylo (:Stylo)
+
+SubClassOf(:Stylo ObjectSomeValuesFrom(:composeDe :Bouchon))
+SubClassOf(:Stylo ObjectSomeValuesFrom(:composeDe :Capuchon))
+SubClassOf(:Stylo ObjectSomeValuesFrom(:composeDe :Cartouche))
+SubClassOf(:Stylo ObjectSomeValuesFrom(:composeDe :Tube_cylindrique))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Instance_FAO_Bille (:Instance_FAO_Bille)
+
+ClassAssertion(:Bille :Instance_FAO_Bille)
+
+# Individual: :Instance_FAO_Bouchon (:Instance_FAO_Bouchon)
+
+ClassAssertion(:Bouchon :Instance_FAO_Bouchon)
+
+# Individual: :Instance_FAO_Capuchon (:Instance_FAO_Capuchon)
+
+ClassAssertion(:Capuchon :Instance_FAO_Capuchon)
+
+# Individual: :Instance_FAO_Cartouche (:Instance_FAO_Cartouche)
+
+ClassAssertion(:Cartouche :Instance_FAO_Cartouche)
+
+# Individual: :Instance_FAO_Mine (:Instance_FAO_Mine)
+
+ClassAssertion(:Mine :Instance_FAO_Mine)
+
+# Individual: :Instance_FAO_Objet_conique (:Instance_FAO_Objet_conique)
+
+ClassAssertion(:Objet_conique :Instance_FAO_Objet_conique)
+
+# Individual: :Instance_FAO_Pointe (:Instance_FAO_Pointe)
+
+ClassAssertion(:Pointe :Instance_FAO_Pointe)
+
+# Individual: :Instance_FAO_Stylo (:Instance_FAO_Stylo)
+
+ClassAssertion(:Stylo :Instance_FAO_Stylo)
+
+# Individual: :Instance_FAO_Tube_cylindrique (:Instance_FAO_Tube_cylindrique)
+
+ClassAssertion(:Tube_cylindrique :Instance_FAO_Tube_cylindrique)
+
+
+)

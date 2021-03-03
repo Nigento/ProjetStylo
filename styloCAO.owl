@@ -1,0 +1,111 @@
+Prefix(:=<http://www.tiw3.sic/ontologies/StyloCAO.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.tiw3.sic/ontologies/StyloCAO.owl>
+
+Declaration(Class(:Bille))
+Declaration(Class(:Bouchon))
+Declaration(Class(:Capuchon))
+Declaration(Class(:Corps))
+Declaration(Class(:Recharge))
+Declaration(Class(:Reservoir))
+Declaration(Class(:Stylo))
+Declaration(Class(:Support_de_tete))
+Declaration(Class(:Tete))
+Declaration(Class(:Tete_ecriture))
+Declaration(Class(:Tube))
+Declaration(ObjectProperty(:composeDe))
+Declaration(NamedIndividual(:Instance_CAO_Bille))
+Declaration(NamedIndividual(:Instance_CAO_Bouchon))
+Declaration(NamedIndividual(:Instance_CAO_Capuchon))
+Declaration(NamedIndividual(:Instance_CAO_Corps))
+Declaration(NamedIndividual(:Instance_CAO_Recharge))
+Declaration(NamedIndividual(:Instance_CAO_Reservoir))
+Declaration(NamedIndividual(:Instance_CAO_Stylo))
+Declaration(NamedIndividual(:Instance_CAO_Support_de_tete))
+Declaration(NamedIndividual(:Instance_CAO_Tete))
+Declaration(NamedIndividual(:Instance_CAO_Tete_ecriture))
+Declaration(NamedIndividual(:Instance_CAO_Tube))
+
+############################
+#   Classes
+############################
+
+# Class: :Corps (:Corps)
+
+SubClassOf(:Corps ObjectSomeValuesFrom(:composeDe :Bouchon))
+SubClassOf(:Corps ObjectSomeValuesFrom(:composeDe :Recharge))
+SubClassOf(:Corps ObjectSomeValuesFrom(:composeDe :Tube))
+
+# Class: :Recharge (:Recharge)
+
+SubClassOf(:Recharge ObjectSomeValuesFrom(:composeDe :Reservoir))
+SubClassOf(:Recharge ObjectSomeValuesFrom(:composeDe :Tete_ecriture))
+
+# Class: :Stylo (:Stylo)
+
+SubClassOf(:Stylo ObjectSomeValuesFrom(:composeDe :Capuchon))
+SubClassOf(:Stylo ObjectSomeValuesFrom(:composeDe :Corps))
+
+# Class: :Tete_ecriture (:Tete_ecriture)
+
+SubClassOf(:Tete_ecriture ObjectSomeValuesFrom(:composeDe :Bille))
+SubClassOf(:Tete_ecriture ObjectSomeValuesFrom(:composeDe :Support_de_tete))
+SubClassOf(:Tete_ecriture ObjectSomeValuesFrom(:composeDe :Tete))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Instance_CAO_Bille (:Instance_CAO_Bille)
+
+ClassAssertion(:Bille :Instance_CAO_Bille)
+
+# Individual: :Instance_CAO_Bouchon (:Instance_CAO_Bouchon)
+
+ClassAssertion(:Bouchon :Instance_CAO_Bouchon)
+
+# Individual: :Instance_CAO_Capuchon (:Instance_CAO_Capuchon)
+
+ClassAssertion(:Capuchon :Instance_CAO_Capuchon)
+
+# Individual: :Instance_CAO_Corps (:Instance_CAO_Corps)
+
+ClassAssertion(:Corps :Instance_CAO_Corps)
+
+# Individual: :Instance_CAO_Recharge (:Instance_CAO_Recharge)
+
+ClassAssertion(:Recharge :Instance_CAO_Recharge)
+
+# Individual: :Instance_CAO_Reservoir (:Instance_CAO_Reservoir)
+
+ClassAssertion(:Reservoir :Instance_CAO_Reservoir)
+
+# Individual: :Instance_CAO_Stylo (:Instance_CAO_Stylo)
+
+ClassAssertion(:Stylo :Instance_CAO_Stylo)
+
+# Individual: :Instance_CAO_Support_de_tete (:Instance_CAO_Support_de_tete)
+
+ClassAssertion(:Support_de_tete :Instance_CAO_Support_de_tete)
+
+# Individual: :Instance_CAO_Tete (:Instance_CAO_Tete)
+
+ClassAssertion(:Tete :Instance_CAO_Tete)
+
+# Individual: :Instance_CAO_Tete_ecriture (:Instance_CAO_Tete_ecriture)
+
+ClassAssertion(:Tete_ecriture :Instance_CAO_Tete_ecriture)
+
+# Individual: :Instance_CAO_Tube (:Instance_CAO_Tube)
+
+ClassAssertion(:Tube :Instance_CAO_Tube)
+
+
+)

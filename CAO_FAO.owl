@@ -1,0 +1,72 @@
+Prefix(:=<http://www.semanticweb.org/33601/ontologies/2021/1/CAO_FAO.owl#>)
+Prefix(CAO:=<http://www.tiw3.sic/ontologies/StyloCAO.owl#>)
+Prefix(FAO:=<http://www.tiw3.sic/ontologies/StyloFAO.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/33601/ontologies/2021/1/CAO_FAO.owl>
+Import(<http://www.tiw3.sic/ontologies/StyloCAO.owl>)
+Import(<http://www.tiw3.sic/ontologies/StyloFAO.owl>)
+
+############################
+#   Object Properties
+############################
+
+# Object Property: CAO:composeDe (CAO:composeDe)
+
+EquivalentObjectProperties(CAO:composeDe FAO:composeDe)
+
+
+############################
+#   Classes
+############################
+
+# Class: CAO:Bille (CAO:Bille)
+
+EquivalentClasses(CAO:Bille FAO:Bille)
+
+# Class: CAO:Bouchon (CAO:Bouchon)
+
+EquivalentClasses(CAO:Bouchon FAO:Bouchon)
+
+# Class: CAO:Capuchon (CAO:Capuchon)
+
+EquivalentClasses(CAO:Capuchon FAO:Capuchon)
+
+# Class: CAO:Corps (CAO:Corps)
+
+EquivalentClasses(CAO:Corps ObjectSomeValuesFrom(FAO:composeDe FAO:Bouchon))
+EquivalentClasses(CAO:Corps ObjectSomeValuesFrom(FAO:composeDe FAO:Cartouche))
+EquivalentClasses(CAO:Corps ObjectSomeValuesFrom(FAO:composeDe FAO:Tube_cylindrique))
+
+# Class: CAO:Recharge (CAO:Recharge)
+
+EquivalentClasses(CAO:Recharge FAO:Cartouche)
+
+# Class: CAO:Reservoir (CAO:Reservoir)
+
+EquivalentClasses(CAO:Reservoir FAO:Mine)
+
+# Class: CAO:Stylo (CAO:Stylo)
+
+EquivalentClasses(CAO:Stylo FAO:Stylo)
+
+# Class: CAO:Tete_ecriture (CAO:Tete_ecriture)
+
+EquivalentClasses(CAO:Tete_ecriture FAO:Pointe)
+
+# Class: CAO:Tube (CAO:Tube)
+
+EquivalentClasses(CAO:Tube FAO:Tube_cylindrique)
+
+# Class: FAO:Objet_conique (FAO:Objet_conique)
+
+EquivalentClasses(FAO:Objet_conique ObjectSomeValuesFrom(CAO:composeDe CAO:Support_de_tete))
+EquivalentClasses(FAO:Objet_conique ObjectSomeValuesFrom(CAO:composeDe CAO:Tete))
+
+
+)

@@ -1,0 +1,13 @@
+ISO 10303_21;
+Begin data;
+#1 = Produit('P1', 'Stylo',(#2, #3, #4, #5));
+#2 = Produit('P2', 'Capuchon', $);
+#3 = Produit('P3', 'Bouchon', $);
+#4 = Produit('P4', 'Tube cylindrique', $);
+#5 = Produit('P5', 'Cartouche', (#6, #7));
+#6 = Produit('P6', 'Mine', $) ;
+#7 = Produit('P7', 'Pointe', (#8, #9));
+#8 = Produit('P8', 'Bille', $);
+#9 = Produit('P9', 'Objet conique', $);
+End data;
+End ISO 10303_21;
